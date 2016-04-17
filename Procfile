@@ -1,1 +1,1 @@
-web: bundle exec rails s -p $PORT -b 0.0.0.0
+web: bundle exec passenger start --address $PASSENGER_ADDRESS --port $PASSENGER_PORT --max-pool-size 1
