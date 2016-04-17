@@ -1,0 +1,58 @@
+// Frameworks
+@import "_settings";
+@import "foundation_and_overrides";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  > header {
+    background: #333;
+    color: #eee;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  > section {
+    background: #1f1f1f;
+    display: flex;
+    flex: 1;
+  }
+}
+
+
+.box {
+  $width: 40rem;
+  $margin: 2rem;
+
+  background: #efefef;
+  height: 100%;
+  margin: $margin;
+  padding-top: 0;
+  width: 100%;
+
+  & > header {
+    background: #ef4136;
+    color: white;
+    padding: .25rem;
+    text-align: center;
+  }
+
+  & > section {
+    padding: 2rem;
+  }
+
+  .action {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  @media screen and (min-width: ($width + 2 * $margin)) {
+    margin-left: auto;
+    margin-right: auto;
+    width: $width;
+  }
+}
+
+.callout { text-align: center; }

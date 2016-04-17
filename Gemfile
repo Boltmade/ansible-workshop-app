@@ -5,7 +5,7 @@ gem 'sqlite3'
 gem 'puma'
 gem 'foreman'
 
-gem 'high_voltage', github: 'thoughtbot/high_voltage'
+gem 'foundation-rails'
 
 gem 'slim-rails'
 gem 'sass-rails', '~> 5.0'
@@ -18,6 +18,10 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-lodash', '~> 4.9.0'
+end
 
 group :development, :test do
   gem 'byebug'

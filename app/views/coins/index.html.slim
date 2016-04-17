@@ -1,0 +1,27 @@
+.box
+  header
+    h1 Coin Toss!
+  section
+    - if @coin.present? && @coin.errors.any?
+      .callout.alert
+        - @coin.errors.full_messages.each do |msg|
+          p= msg
+
+    .callout(class=(@last_flip.present? ? 'primary' : 'warning'))
+      - if @last_flip.present?
+        p You last flipped a #{@last_flip.to_s.pluralize}!
+      - else
+        p Why not flip a coin and test your luck?
+
+    .row.collapse
+      .small-12.medium-4.columns
+        .callout
+          h3= @heads
+          p Heads!
+      .small-12.medium-4.columns
+        .action
+          = link_to "Flip a coin!", coins_path, method: :post, class: :button
+      .small-12.medium-4.columns
+        .callout
+          h3= @tails
+          p Tails!
